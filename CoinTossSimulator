@@ -1,0 +1,82 @@
+/**
+ *
+ * @author Angie Tirado
+ */
+public class CoinTossSimulatorDriver {
+
+    public static void main(String[] args) {
+        
+        int qheadCount = 0;
+        int qtailCount = 0;
+        
+        int dheadCount = 0;
+        int dtailCount = 0;      
+        
+        int nheadCount = 0;
+        int ntailCount = 0;   
+        
+        double balance = 0.0;
+        
+        Coin c = new Coin();            //quarter
+        Coin d = new Coin();            //dime
+        Coin n = new Coin();            //nickel
+        
+        for(int i = 1; i <= 20; i++){
+            
+            c.toss();
+            d.toss();
+            n.toss();
+            if(c.getSideUp().equals("Heads")){
+                qheadCount++;
+                balance += .25;
+            }
+            else{
+                qtailCount++;
+            }
+            
+            
+            if(d.getSideUp().equals("Heads")){
+                dheadCount++;
+                balance += .10;
+            }
+            else{
+                dtailCount++;
+            } 
+            
+            if(n.getSideUp().equals("Heads")){
+                nheadCount++;
+                balance += .05;
+            }
+            else{
+                ntailCount++;
+            }            
+            System.out.println("Round " + i + " Quarter: " + c.getSideUp());
+            System.out.println("Round " + i + " Dime: " + d.getSideUp());
+            System.out.println("Round " + i + " Nickel: " + n.getSideUp());
+            System.out.println();
+        }
+        
+        if(balance > 1){
+            System.out.println("YOU LOOSE!!");
+        }
+        else{
+            System.out.println("YOU WIN!!");
+        }
+        
+        System.out.printf("Balance $%.2f" , balance);
+        System.out.println();
+        
+        System.out.println();
+        System.out.println("Quarter Head Count: " + qheadCount);
+        System.out.println("Quarter Tail Count: " + qtailCount);
+        
+        System.out.println();
+        System.out.println("Dime Head Count: " + dheadCount);
+        System.out.println("Dime Tail Count: " + dtailCount);
+        
+        System.out.println();
+        System.out.println("Nickel Head Count: " + nheadCount);
+        System.out.println("Nickel Tail Count: " + ntailCount);        
+        
+    }
+}
