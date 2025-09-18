@@ -1,0 +1,32 @@
+/**
+ *
+ * @author Angie Tirado
+ */
+public class Coin {
+    private String sideUp;
+    
+    public Coin(){
+        int numb = (int)(Math.random() * 2 + 1);
+        if(numb == 1){
+            sideUp = "Heads";
+        }
+        else{
+            sideUp = "Tails";
+        }
+    }
+    
+    public void toss(){
+        int num = (int) (Math.random() * 2 + 1);
+        if(num == 1){
+            sideUp = "Heads";
+        }
+        else{
+            sideUp = "Tails";
+        }
+    }
+    
+    public String getSideUp(){
+        return sideUp;
+    }
+    
+}
